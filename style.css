@@ -1,0 +1,121 @@
+body {
+    font-family: "MiSans", sans-serif;
+    background: #0a0a0a;
+    overflow: hidden;
+}
+
+.bg-primary { background-color: #060606; }
+.text-primary { color: #FFF; }
+.text-accent { color: #ffffff; }
+
+.glow-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(123, 104, 238, 0.3);
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.2), inset 0 0 20px rgba(123, 104, 238, 0.1);
+    opacity: 0.8;
+}
+
+.tech-gradient {
+    background: linear-gradient(135deg, #1E3A8A 0%, #7B68EE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.purple-glow {
+    text-shadow: 0 0 30px rgba(123, 104, 238, 0.5);
+}
+
+/* ==================== ANIMASI SLIDE (GESER) ==================== */
+.slide-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
+    z-index: 10;
+}
+
+.slide-container.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 20;
+    transform: translateX(0);
+}
+
+/* ==================== EFEK 3D SOFTWARE (Halaman 3) ==================== */
+.software-card {
+    width: 280px;
+    height: 360px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.software-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.software-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.software-card:hover .software-icon {
+    transform: scale(1.1) translateY(-10px);
+}
+
+.bg-canva { border-color: #00C4CC; box-shadow: 0 10px 30px rgba(0, 196, 204, 0.1); }
+.bg-canva:hover { box-shadow: 0 20px 40px rgba(0, 196, 204, 0.3); border-color: #00C4CC; }
+
+.bg-capcut { border-color: rgba(255, 255, 255, 0.3); box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); } 
+.bg-capcut:hover { box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2); border-color: white; }
+
+.bg-picart { border-color: #FDB813; box-shadow: 0 10px 30px rgba(253, 184, 19, 0.1); }
+.bg-picart:hover { box-shadow: 0 20px 40px rgba(253, 184, 19, 0.3); border-color: #FDB813; }
+
+/* TOMBOL NAVIGASI */
+.nav-btn-inline {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #6D28D9 0%, #7B68EE 100%);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.nav-btn-inline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(123, 104, 238, 0.7);
+}
+
+.nav-btn-inline i { margin-left: 8px; }
+.nav-btn-inline.back-btn i { margin-left: 0; margin-right: 8px; }
+
+.material-icons { width: 1em; direction: rtl; }
