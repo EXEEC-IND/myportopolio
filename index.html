@@ -17,6 +17,14 @@
             .ppt-slide {
                 @apply relative w-full h-screen mx-auto box-border;
             }
+            /* Tambahan agar scroll rapi di HP jika konten kepanjangan */
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
         }
     </style>
 </head>
@@ -29,149 +37,172 @@
             <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-purple-900/40"></div>
         </div>
         
-        <div class="glow-circle w-[500px] h-[500px] -top-[150px] -right-[150px] z-0" style="animation: pulse 4s ease-in-out infinite"></div>
-        <div class="glow-circle w-[350px] h-[350px] top-[200px] -left-[100px] z-0" style="animation: pulse 4s ease-in-out infinite 1s"></div>
+        <div class="glow-circle w-[300px] md:w-[500px] h-[300px] md:h-[500px] -top-[100px] md:-top-[150px] -right-[100px] md:-right-[150px] z-0" style="animation: pulse 4s ease-in-out infinite"></div>
+        <div class="glow-circle w-[200px] md:w-[350px] h-[200px] md:h-[350px] top-[200px] -left-[100px] z-0" style="animation: pulse 4s ease-in-out infinite 1s"></div>
         <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(123, 104, 238, 0.1) 2px, rgba(123, 104, 238, 0.1) 4px)"></div>
 
-        <div id="slide-1" class="slide-container active" style="transform: translateX(0);">
-            <div class="relative z-10 h-full flex items-center">
-                <div class="w-3/5 pl-[70px] pr-5 flex flex-col justify-center">
-                    <div class="flex items-center mb-8">
-                        <div class="h-[2px] w-12 bg-gradient-to-r from-blue-500 to-purple-600 mr-4"></div>
-                        <span class="text-accent text-sm font-medium tracking-widest uppercase">Professional Introduction</span>
+        <div id="slide-1" class="slide-container active overflow-y-auto hide-scrollbar" style="transform: translateX(0);">
+            <div class="relative z-10 min-h-full flex flex-col-reverse md:flex-row items-center py-10 md:py-0">
+                <div class="w-full md:w-3/5 px-6 md:pl-[70px] md:pr-5 flex flex-col justify-center items-center md:items-start text-center md:text-left mt-8 md:mt-0">
+                    <div class="flex items-center mb-6 md:mb-8">
+                        <div class="h-[2px] w-8 md:w-12 bg-gradient-to-r from-blue-500 to-purple-600 mr-4"></div>
+                        <span class="text-accent text-xs md:text-sm font-medium tracking-widest uppercase">Professional Introduction</span>
                     </div>
-                    <h1 class="text-[64px] font-bold leading-tight text-primary mb-6 purple-glow">HALO, SAYA Abian</h1>
-                    <div class="text-[68px] font-bold leading-tight mb-8"><span class="tech-gradient">Muhamad Abian</span></div>
-                    <div class="flex items-center space-x-4 text-[20px] text-gray-300 mb-12">
-                        <span class="flex items-center"><i class="material-icons text-accent mr-2">memory</i> Teknologi</span>
-                        <span class="text-gray-600">|</span>
-                        <span class="flex items-center"><i class="material-icons text-accent mr-2">lightbulb</i> Inovasi</span>
-                        <span class="text-gray-600">|</span>
-                        <span class="flex items-center"><i class="material-icons text-accent mr-2">palette</i> Kreativitas</span>
+                    <h1 class="text-4xl md:text-[64px] font-bold leading-tight text-primary mb-2 md:mb-6 purple-glow">HALO, SAYA Abian</h1>
+                    <div class="text-3xl md:text-[68px] font-bold leading-tight mb-6 md:mb-8"><span class="tech-gradient">Muhamad Abian</span></div>
+                    <div class="flex flex-wrap justify-center md:justify-start items-center gap-2 md:space-x-4 text-sm md:text-[20px] text-gray-300 mb-8 md:mb-12">
+                        <span class="flex items-center"><i class="material-icons text-accent mr-1 md:mr-2 text-sm md:text-base">memory</i> Teknologi</span>
+                        <span class="text-gray-600 hidden md:inline">|</span>
+                        <span class="flex items-center"><i class="material-icons text-accent mr-1 md:mr-2 text-sm md:text-base">lightbulb</i> Inovasi</span>
+                        <span class="text-gray-600 hidden md:inline">|</span>
+                        <span class="flex items-center"><i class="material-icons text-accent mr-1 md:mr-2 text-sm md:text-base">palette</i> Kreativitas</span>
                     </div>
                     <div class="flex items-center space-x-3">
                         <div class="h-1 w-1 bg-accent rounded-full"></div>
-                        <span class="text-gray-400 text-sm">Teknologi Profesional &amp; Minimalis</span>
+                        <span class="text-gray-400 text-xs md:text-sm">Teknologi Profesional &amp; Minimalis</span>
                         <div class="h-1 w-1 bg-accent rounded-full"></div>
                     </div>
                 </div>
-                <div class="w-2/5 pl-5 pr-[70px] flex flex-col justify-center items-end">
-                    <div class="relative mb-10">
-                        <div class="w-[320px] h-[320px] rounded-full border-4 border-accent/30 overflow-hidden relative" style="box-shadow: 0 0 60px rgba(123, 104, 238, 0.4)">
+                <div class="w-full md:w-2/5 px-6 md:pl-5 md:pr-[70px] flex flex-col justify-center items-center md:items-end">
+                    <div class="relative mb-6 md:mb-10 mt-10 md:mt-0">
+                        <div class="w-[200px] h-[200px] md:w-[320px] md:h-[320px] rounded-full border-4 border-accent/30 overflow-hidden relative" style="box-shadow: 0 0 60px rgba(123, 104, 238, 0.4)">
                             <img src="https://z-cdn-media.chatglm.cn/files/6599c2df-d7f3-4523-87db-8fcc11b63c8b.jpeg?auth_key=1871615154-ebf074b2ba95486d8361a2783b60f8e1-0-f0645777ff5e6d5e45a8b8b0f51990a7" alt="Profile Photo" class="w-full h-full object-cover"/>
                         </div>
                         <div class="absolute -inset-4 rounded-full border-2 border-accent/20" style="animation: spin 20s linear infinite"></div>
                     </div>
-                    <div class="flex flex-col items-end">
-                        <span class="text-gray-500 text-xs mb-2 mr-2">01 / 04</span>
-                        <button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button>
+                    <div class="flex flex-col items-center md:items-end w-full">
+                        <span class="text-gray-500 text-xs mb-2 md:mr-2">01 / 04</span>
+                        <button onclick="changeSlide(1)" class="nav-btn-inline bg-white/10 px-4 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none">Selanjutnya <i class="material-icons text-sm align-middle">arrow_forward</i></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="slide-2" class="slide-container" style="transform: translateX(100px);">
-            <div class="relative z-10 h-full flex flex-col px-[70px] py-10">
-                <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
-                    <div><h2 class="text-[42px] font-bold text-primary mb-1">Tentang Saya</h2><p class="text-gray-400">Latar Belakang & Keahlian</p></div>
-                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn"><i class="material-icons text-sm">arrow_back</i> Kembali</button>
+        <div id="slide-2" class="slide-container overflow-y-auto hide-scrollbar" style="transform: translateX(100px);">
+            <div class="relative z-10 min-h-full flex flex-col px-6 md:px-[70px] py-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-gray-700 pb-4 gap-4 md:gap-0">
+                    <div>
+                        <h2 class="text-3xl md:text-[42px] font-bold text-primary mb-1">Tentang Saya</h2>
+                        <p class="text-gray-400 text-sm md:text-base">Latar Belakang & Keahlian</p>
+                    </div>
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn bg-white/10 px-4 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none"><i class="material-icons text-sm align-middle">arrow_back</i> Kembali</button>
                 </div>
-                <div class="grid grid-cols-2 gap-12 flex-grow">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 flex-grow">
                     <div class="flex flex-col justify-center space-y-8">
-                        <div><h3 class="text-accent font-semibold text-lg mb-2">SIAPA SAYA?</h3><p class="text-gray-300 leading-relaxed">Saya seorang profesional yang berdedikasi dengan latar belakang di bidang teknologi dan inovasi. Memiliki passion dalam menciptakan solusi teknologi yang dapat membantu meningkatkan efisiensi dan produktivitas.</p></div>
-                        <div><h3 class="text-accent font-semibold text-lg mb-4">PENDIDIKAN & PENGALAMAN</h3>
+                        <div>
+                            <h3 class="text-accent font-semibold text-base md:text-lg mb-2">SIAPA SAYA?</h3>
+                            <p class="text-gray-300 leading-relaxed text-sm md:text-base">Saya seorang profesional yang berdedikasi dengan latar belakang di bidang teknologi dan inovasi. Memiliki passion dalam menciptakan solusi teknologi yang dapat membantu meningkatkan efisiensi dan produktivitas.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-accent font-semibold text-base md:text-lg mb-4">PENDIDIKAN & PENGALAMAN</h3>
                             <div class="space-y-4">
-                                <div class="flex items-start"><i class="material-icons text-gray-500 mr-3 mt-1">school</i><div><div class="text-white font-medium">S1 Teknologi Informasi</div><div class="text-sm text-gray-200">Universitas Muhamadiyah Bogor Raya 2025 - sekarang</div></div></div>
-                                <div class="flex items-start"><i class="material-icons text-gray-500 mr-3 mt-1">work</i><div><div class="text-white font-medium">Pengalaman Oraganisasi </div><div class="text-sm text-gray-200">- Ketua Medinkon Hima Cosinbara <br>- Anggota Medkom Interlude </br></div></div></div>
+                                <div class="flex items-start">
+                                    <i class="material-icons text-gray-500 mr-3 mt-1">school</i>
+                                    <div>
+                                        <div class="text-white font-medium text-sm md:text-base">S1 Teknologi Informasi</div>
+                                        <div class="text-xs md:text-sm text-gray-200">Universitas Muhammadiyah Bogor Raya<br>2025 - sekarang</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="material-icons text-gray-500 mr-3 mt-1">work</i>
+                                    <div>
+                                        <div class="text-white font-medium text-sm md:text-base">Pengalaman Organisasi</div>
+                                        <div class="text-xs md:text-sm text-gray-200">- Ketua Medinkon Hima Cosinbara<br>- Anggota Medkom Interlude</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-col justify-center">
-                        <h3 class="text-accent font-semibold text-lg mb-6">KETERAMPILAN TEKNIS</h3>
+                        <h3 class="text-accent font-semibold text-base md:text-lg mb-6">KETERAMPILAN TEKNIS</h3>
                         <div class="space-y-5">
-                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Photography</span><span class="text-accent">90%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 90%"></div></div></div>
-                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Photo Editing</span><span class="text-accent">85%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 85%"></div></div></div>
-                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">UI/UX Design</span><span class="text-accent">80%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 80%"></div></div></div>
-                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Project Management</span><span class="text-accent">75%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 75%"></div></div></div>
+                            <div><div class="flex justify-between text-xs md:text-sm mb-1"><span class="text-gray-200 font-medium">Photography</span><span class="text-accent">90%</span></div><div class="w-full bg-gray-800 rounded-full h-2 md:h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 md:h-2.5 rounded-full" style="width: 90%"></div></div></div>
+                            <div><div class="flex justify-between text-xs md:text-sm mb-1"><span class="text-gray-200 font-medium">Photo Editing</span><span class="text-accent">85%</span></div><div class="w-full bg-gray-800 rounded-full h-2 md:h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 md:h-2.5 rounded-full" style="width: 85%"></div></div></div>
+                            <div><div class="flex justify-between text-xs md:text-sm mb-1"><span class="text-gray-200 font-medium">UI/UX Design</span><span class="text-accent">80%</span></div><div class="w-full bg-gray-800 rounded-full h-2 md:h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 md:h-2.5 rounded-full" style="width: 80%"></div></div></div>
+                            <div><div class="flex justify-between text-xs md:text-sm mb-1"><span class="text-gray-200 font-medium">Project Management</span><span class="text-accent">75%</span></div><div class="w-full bg-gray-800 rounded-full h-2 md:h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2 md:h-2.5 rounded-full" style="width: 75%"></div></div></div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-end mt-6"><span class="text-gray-500 text-xs mr-2">02 / 04</span><button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button></div>
+                <div class="flex justify-center md:justify-end mt-8 md:mt-6 pb-8 md:pb-0">
+                    <span class="text-gray-500 text-xs mr-2 self-center">02 / 04</span>
+                    <button onclick="changeSlide(1)" class="nav-btn-inline bg-white/10 px-4 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none">Selanjutnya <i class="material-icons text-sm align-middle">arrow_forward</i></button>
+                </div>
             </div>
         </div>
 
-        <div id="slide-3" class="slide-container" style="transform: translateX(100px);">
-            <div class="relative z-10 h-full flex flex-col px-[70px] py-10">
-                <div class="flex justify-between items-center mb-12 border-b border-gray-700 pb-4">
+        <div id="slide-3" class="slide-container overflow-y-auto hide-scrollbar" style="transform: translateX(100px);">
+            <div class="relative z-10 min-h-full flex flex-col px-6 md:px-[70px] py-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 border-b border-gray-700 pb-4 gap-4 md:gap-0">
                     <div>
-                        <h2 class="text-[42px] font-bold text-primary mb-1">Tools Kreatif</h2>
-                        <p class="text-gray-400">Software yang saya gunakan untuk desain & editing</p>
+                        <h2 class="text-3xl md:text-[42px] font-bold text-primary mb-1">Tools Kreatif</h2>
+                        <p class="text-gray-400 text-sm md:text-base">Software yang saya gunakan untuk desain & editing</p>
                     </div>
-                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn"><i class="material-icons text-sm">arrow_back</i> Kembali</button>
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn bg-white/10 px-4 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none"><i class="material-icons text-sm align-middle">arrow_back</i> Kembali</button>
                 </div>
 
-                <div class="flex-grow flex items-center justify-center gap-8 perspective-1000">
-                    <div class="software-card bg-canva group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
-                        <i class="fa-solid fa-c software-icon text-[#00C4CC]"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2 z-10">Canva</h3>
-                        <p class="text-gray-300 text-sm px-4 text-center z-10">Desain Grafis & Template</p>
+                <div class="flex-grow flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 perspective-1000 my-8 md:my-0">
+                    <div class="software-card bg-canva group w-full md:w-auto p-6 md:p-8 rounded-xl bg-gray-800/50 border border-gray-700 text-center relative overflow-hidden" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-c software-icon text-[#00C4CC] text-4xl mb-4 block"></i>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 z-10 relative">Canva</h3>
+                        <p class="text-gray-300 text-xs md:text-sm px-4 text-center z-10 relative">Desain Grafis & Template</p>
                         <div class="absolute bottom-0 left-0 w-full h-1 bg-[#00C4CC]"></div>
                     </div>
-                    <div class="software-card bg-capcut group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
-                        <i class="fa-solid fa-scissors software-icon text-white"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2 z-10">CapCut</h3>
-                        <p class="text-gray-300 text-sm px-4 text-center z-10">Video Editing Modern</p>
+                    <div class="software-card bg-capcut group w-full md:w-auto p-6 md:p-8 rounded-xl bg-gray-800/50 border border-gray-700 text-center relative overflow-hidden" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-scissors software-icon text-white text-4xl mb-4 block"></i>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 z-10 relative">CapCut</h3>
+                        <p class="text-gray-300 text-xs md:text-sm px-4 text-center z-10 relative">Video Editing Modern</p>
                         <div class="absolute bottom-0 left-0 w-full h-1 bg-white"></div>
                     </div>
-                    <div class="software-card bg-picart group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
-                        <i class="fa-solid fa-paintbrush software-icon text-[#FDB813]"></i>
-                        <h3 class="text-2xl font-bold text-white mb-2 z-10">PicsArt</h3>
-                        <p class="text-gray-300 text-sm px-4 text-center z-10">Photo Editing & Art</p>
+                    <div class="software-card bg-picart group w-full md:w-auto p-6 md:p-8 rounded-xl bg-gray-800/50 border border-gray-700 text-center relative overflow-hidden" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-paintbrush software-icon text-[#FDB813] text-4xl mb-4 block"></i>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-2 z-10 relative">PicsArt</h3>
+                        <p class="text-gray-300 text-xs md:text-sm px-4 text-center z-10 relative">Photo Editing & Art</p>
                         <div class="absolute bottom-0 left-0 w-full h-1 bg-[#FDB813]"></div>
                     </div>
                 </div>
 
-                <div class="flex justify-end mt-6">
-                    <span class="text-gray-500 text-xs mr-2">03 / 04</span>
-                    <button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button>
+                <div class="flex justify-center md:justify-end mt-4 pb-8 md:pb-0">
+                    <span class="text-gray-500 text-xs mr-2 self-center">03 / 04</span>
+                    <button onclick="changeSlide(1)" class="nav-btn-inline bg-white/10 px-4 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none">Selanjutnya <i class="material-icons text-sm align-middle">arrow_forward</i></button>
                 </div>
             </div>
         </div>
 
-        <div id="slide-4" class="slide-container" style="transform: translateX(100px);">
-            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-20">
-                <div class="mb-10">
-                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center mb-6 shadow-[0_0_50px_rgba(123,104,238,0.5)]">
-                        <i class="material-icons text-white text-5xl">check_circle</i>
+        <div id="slide-4" class="slide-container overflow-y-auto hide-scrollbar" style="transform: translateX(100px);">
+            <div class="relative z-10 min-h-full flex flex-col items-center justify-center text-center px-6 md:px-20 py-10">
+                <div class="mb-8 md:mb-10">
+                    <div class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center mb-6 shadow-[0_0_50px_rgba(123,104,238,0.5)]">
+                        <i class="material-icons text-white text-4xl md:text-5xl">check_circle</i>
                     </div>
-                    <h2 class="text-[56px] font-bold text-primary mb-4 purple-glow">Terima Kasih</h2>
-                    <div class="h-1 w-32 bg-accent mx-auto mb-6 rounded-full"></div>
-                    <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                        "Hiduplah dengan caramu tapi jangan berhenti berfikir!!"
+                    <h2 class="text-4xl md:text-[56px] font-bold text-primary mb-4 purple-glow">Terima Kasih</h2>
+                    <div class="h-1 w-24 md:w-32 bg-accent mx-auto mb-6 rounded-full"></div>
+                    <p class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed italic">
+                        "Hiduplah dengan caramu tapi jangan berhenti berpikir!!"
                     </p>
                 </div>
-                <div class="flex items-center space-x-8 mt-8">
-                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
-                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">email</i>
-                        <span class="text-sm">Email moehamadabian@gmail.com</span>
+                
+                <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 mt-4 md:mt-8 w-full md:w-auto">
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition w-full md:w-auto bg-white/5 md:bg-transparent p-4 md:p-0 rounded-lg">
+                        <i class="material-icons text-2xl md:text-3xl mb-2 group-hover:text-accent">email</i>
+                        <span class="text-xs md:text-sm">moehamadabian@gmail.com</span>
                     </a>
-                    <div class="h-10 w-[1px] bg-gray-700"></div>
-                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
-                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">link</i>
-                        <span class="text-sm">Portfolio Muhamad Abian</span>
+                    <div class="hidden md:block h-10 w-[1px] bg-gray-700"></div>
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition w-full md:w-auto bg-white/5 md:bg-transparent p-4 md:p-0 rounded-lg">
+                        <i class="material-icons text-2xl md:text-3xl mb-2 group-hover:text-accent">link</i>
+                        <span class="text-xs md:text-sm">Portfolio Muhamad Abian</span>
                     </a>
-                    <div class="h-10 w-[1px] bg-gray-700"></div>
-                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
-                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">chat</i>
-                        <span class="text-sm">WhatsApp +62 851-3494-7484</span>
+                    <div class="hidden md:block h-10 w-[1px] bg-gray-700"></div>
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition w-full md:w-auto bg-white/5 md:bg-transparent p-4 md:p-0 rounded-lg">
+                        <i class="material-icons text-2xl md:text-3xl mb-2 group-hover:text-accent">chat</i>
+                        <span class="text-xs md:text-sm">WhatsApp +62 851-3494-7484</span>
                     </a>
                 </div>
-                <div class="mt-16">
-                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn">
-                        <i class="material-icons text-sm">arrow_back</i> Kembali
+                
+                <div class="mt-10 md:mt-16 pb-8 md:pb-0">
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn bg-white/10 px-6 py-2 rounded-full md:bg-transparent md:px-0 md:py-0 md:rounded-none">
+                        <i class="material-icons text-sm align-middle">arrow_back</i> Kembali
                     </button>
                 </div>
-                <div class="absolute bottom-6 text-gray-600 text-xs"></div>
             </div>
         </div>
 
