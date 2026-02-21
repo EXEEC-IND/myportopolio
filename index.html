@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>moehamad_abian</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.cn.font.mi.com/font/css?family=MiSans:300,400,500,600,700:Chinese_Simplify,Latin&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .ppt-slide {
+                @apply relative w-full h-screen mx-auto box-border;
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900">
+
+    <div class="ppt-slide bg-primary relative overflow-hidden">
+        
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img src="WhatsApp Image 2026-02-21 at 02.18.34.jpeg" alt="background" class="w-full h-full object-cover opacity-60"/>
+            <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-purple-900/40"></div>
+        </div>
+        
+        <div class="glow-circle w-[500px] h-[500px] -top-[150px] -right-[150px] z-0" style="animation: pulse 4s ease-in-out infinite"></div>
+        <div class="glow-circle w-[350px] h-[350px] top-[200px] -left-[100px] z-0" style="animation: pulse 4s ease-in-out infinite 1s"></div>
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(123, 104, 238, 0.1) 2px, rgba(123, 104, 238, 0.1) 4px)"></div>
+
+        <div id="slide-1" class="slide-container active" style="transform: translateX(0);">
+            <div class="relative z-10 h-full flex items-center">
+                <div class="w-3/5 pl-[70px] pr-5 flex flex-col justify-center">
+                    <div class="flex items-center mb-8">
+                        <div class="h-[2px] w-12 bg-gradient-to-r from-blue-500 to-purple-600 mr-4"></div>
+                        <span class="text-accent text-sm font-medium tracking-widest uppercase">Professional Introduction</span>
+                    </div>
+                    <h1 class="text-[64px] font-bold leading-tight text-primary mb-6 purple-glow">HALO, SAYA Abian</h1>
+                    <div class="text-[68px] font-bold leading-tight mb-8"><span class="tech-gradient">Muhamad Abian</span></div>
+                    <div class="flex items-center space-x-4 text-[20px] text-gray-300 mb-12">
+                        <span class="flex items-center"><i class="material-icons text-accent mr-2">memory</i> Teknologi</span>
+                        <span class="text-gray-600">|</span>
+                        <span class="flex items-center"><i class="material-icons text-accent mr-2">lightbulb</i> Inovasi</span>
+                        <span class="text-gray-600">|</span>
+                        <span class="flex items-center"><i class="material-icons text-accent mr-2">palette</i> Kreativitas</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="h-1 w-1 bg-accent rounded-full"></div>
+                        <span class="text-gray-400 text-sm">Teknologi Profesional &amp; Minimalis</span>
+                        <div class="h-1 w-1 bg-accent rounded-full"></div>
+                    </div>
+                </div>
+                <div class="w-2/5 pl-5 pr-[70px] flex flex-col justify-center items-end">
+                    <div class="relative mb-10">
+                        <div class="w-[320px] h-[320px] rounded-full border-4 border-accent/30 overflow-hidden relative" style="box-shadow: 0 0 60px rgba(123, 104, 238, 0.4)">
+                            <img src="https://z-cdn-media.chatglm.cn/files/6599c2df-d7f3-4523-87db-8fcc11b63c8b.jpeg?auth_key=1871615154-ebf074b2ba95486d8361a2783b60f8e1-0-f0645777ff5e6d5e45a8b8b0f51990a7" alt="Profile Photo" class="w-full h-full object-cover"/>
+                        </div>
+                        <div class="absolute -inset-4 rounded-full border-2 border-accent/20" style="animation: spin 20s linear infinite"></div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span class="text-gray-500 text-xs mb-2 mr-2">01 / 04</span>
+                        <button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="slide-2" class="slide-container" style="transform: translateX(100px);">
+            <div class="relative z-10 h-full flex flex-col px-[70px] py-10">
+                <div class="flex justify-between items-center mb-8 border-b border-gray-700 pb-4">
+                    <div><h2 class="text-[42px] font-bold text-primary mb-1">Tentang Saya</h2><p class="text-gray-400">Latar Belakang & Keahlian</p></div>
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn"><i class="material-icons text-sm">arrow_back</i> Kembali</button>
+                </div>
+                <div class="grid grid-cols-2 gap-12 flex-grow">
+                    <div class="flex flex-col justify-center space-y-8">
+                        <div><h3 class="text-accent font-semibold text-lg mb-2">SIAPA SAYA?</h3><p class="text-gray-300 leading-relaxed">Saya seorang profesional yang berdedikasi dengan latar belakang di bidang teknologi dan inovasi. Memiliki passion dalam menciptakan solusi teknologi yang dapat membantu meningkatkan efisiensi dan produktivitas.</p></div>
+                        <div><h3 class="text-accent font-semibold text-lg mb-4">PENDIDIKAN & PENGALAMAN</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start"><i class="material-icons text-gray-500 mr-3 mt-1">school</i><div><div class="text-white font-medium">S1 Teknologi Informasi</div><div class="text-sm text-gray-200">Universitas Muhamadiyah Bogor Raya 2025 - sekarang</div></div></div>
+                                <div class="flex items-start"><i class="material-icons text-gray-500 mr-3 mt-1">work</i><div><div class="text-white font-medium">Pengalaman Oraganisasi </div><div class="text-sm text-gray-200">- Ketua Medinkon Hima Cosinbara <br>- Anggota Medkom Interlude </br></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-accent font-semibold text-lg mb-6">KETERAMPILAN TEKNIS</h3>
+                        <div class="space-y-5">
+                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Photography</span><span class="text-accent">90%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 90%"></div></div></div>
+                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Photo Editing</span><span class="text-accent">85%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 85%"></div></div></div>
+                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">UI/UX Design</span><span class="text-accent">80%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 80%"></div></div></div>
+                            <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-200 font-medium">Project Management</span><span class="text-accent">75%</span></div><div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-purple-600 h-2.5 rounded-full" style="width: 75%"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end mt-6"><span class="text-gray-500 text-xs mr-2">02 / 04</span><button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button></div>
+            </div>
+        </div>
+
+        <div id="slide-3" class="slide-container" style="transform: translateX(100px);">
+            <div class="relative z-10 h-full flex flex-col px-[70px] py-10">
+                <div class="flex justify-between items-center mb-12 border-b border-gray-700 pb-4">
+                    <div>
+                        <h2 class="text-[42px] font-bold text-primary mb-1">Tools Kreatif</h2>
+                        <p class="text-gray-400">Software yang saya gunakan untuk desain & editing</p>
+                    </div>
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn"><i class="material-icons text-sm">arrow_back</i> Kembali</button>
+                </div>
+
+                <div class="flex-grow flex items-center justify-center gap-8 perspective-1000">
+                    <div class="software-card bg-canva group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-c software-icon text-[#00C4CC]"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2 z-10">Canva</h3>
+                        <p class="text-gray-300 text-sm px-4 text-center z-10">Desain Grafis & Template</p>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-[#00C4CC]"></div>
+                    </div>
+                    <div class="software-card bg-capcut group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-scissors software-icon text-white"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2 z-10">CapCut</h3>
+                        <p class="text-gray-300 text-sm px-4 text-center z-10">Video Editing Modern</p>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-white"></div>
+                    </div>
+                    <div class="software-card bg-picart group" onmousemove="handleMove(event, this)" onmouseleave="handleLeave(this)">
+                        <i class="fa-solid fa-paintbrush software-icon text-[#FDB813]"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2 z-10">PicsArt</h3>
+                        <p class="text-gray-300 text-sm px-4 text-center z-10">Photo Editing & Art</p>
+                        <div class="absolute bottom-0 left-0 w-full h-1 bg-[#FDB813]"></div>
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-6">
+                    <span class="text-gray-500 text-xs mr-2">03 / 04</span>
+                    <button onclick="changeSlide(1)" class="nav-btn-inline">Selanjutnya <i class="material-icons text-sm">arrow_forward</i></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="slide-4" class="slide-container" style="transform: translateX(100px);">
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-20">
+                <div class="mb-10">
+                    <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center mb-6 shadow-[0_0_50px_rgba(123,104,238,0.5)]">
+                        <i class="material-icons text-white text-5xl">check_circle</i>
+                    </div>
+                    <h2 class="text-[56px] font-bold text-primary mb-4 purple-glow">Terima Kasih</h2>
+                    <div class="h-1 w-32 bg-accent mx-auto mb-6 rounded-full"></div>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                        "Hiduplah dengan caramu tapi jangan berhenti berfikir!!"
+                    </p>
+                </div>
+                <div class="flex items-center space-x-8 mt-8">
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
+                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">email</i>
+                        <span class="text-sm">Email moehamadabian@gmail.com</span>
+                    </a>
+                    <div class="h-10 w-[1px] bg-gray-700"></div>
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
+                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">link</i>
+                        <span class="text-sm">Portfolio Muhamad Abian</span>
+                    </a>
+                    <div class="h-10 w-[1px] bg-gray-700"></div>
+                    <a href="#" class="flex flex-col items-center group text-gray-400 hover:text-white transition">
+                        <i class="material-icons text-3xl mb-2 group-hover:text-accent">chat</i>
+                        <span class="text-sm">WhatsApp +62 851-3494-7484</span>
+                    </a>
+                </div>
+                <div class="mt-16">
+                    <button onclick="changeSlide(-1)" class="nav-btn-inline back-btn">
+                        <i class="material-icons text-sm">arrow_back</i> Kembali
+                    </button>
+                </div>
+                <div class="absolute bottom-6 text-gray-600 text-xs"></div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full h-[2px] z-40">
+            <div class="h-full bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
